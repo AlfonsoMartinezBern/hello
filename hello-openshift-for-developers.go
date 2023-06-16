@@ -16,9 +16,24 @@ func helloHandler(w http.ResponseWriter, r *http.Request) {
 	if len(response) == 0 {
 		response = "Chispas 123!"
 	}
-	fmt.Fprintln(w, "--> ", Prueba servicio con Go 1.19")
+	fmt.Fprintln(w, "--> ", "Prueba servicio con Go 1.19")
 	fmt.Fprintln(w, "--> ", response)
-	fmt.Fprintln(w, "--> ", currentTime.Format("2006-01-02 15:04:05"))
+	fmt.Fprintln(w, "--> ", currentTime.For1mat("2006-01-02 15:04:05"))
+    	testLoop:for val := 1; val < 7; val++ {
+        	fmt.Printf("%d", val)
+        	switch {
+        	case val == 1:
+            		fmt.Fprintln(".... -> Start")
+        	case val == 5:
+            		fmt.Fprintln(".... -> Break")
+            		break testLoop
+        	case val > 2:
+            		fmt.Fprintln(".... -> Running")
+            		break 
+        	default:
+            		fmt.Fprintln(".... -> Progress")
+        }
+    }	
 }
 
 func listenAndServe(port string) {
