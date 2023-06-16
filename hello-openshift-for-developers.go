@@ -21,15 +21,15 @@ func helloHandler(w http.ResponseWriter, r *http.Request) {
         	fmt.Printf("%d", val)
         	switch {
         	case val == 1:
-            		fmt.Fprintln(w, ".... %d -> Start"  , val)
+            		fmt.Fprintln(w, ".... ",val," -> Start")
         	case val == 5:
-            		fmt.Fprintln(w, ".... %d -> Break"  , val)
+            		fmt.Fprintln(w, ".... ",val," -> Break")
             		break testLoop
         	case val > 2:
-            		fmt.Fprintln(w, ".... %d -> Running", val)
+            		fmt.Fprintln(w, ".... ",val," -> Running")
             		break 
         	default:
-            		fmt.Fprintln(w, ".... %d -> Progress", val)
+            		fmt.Fprintln(w, ".... ",val," -> Progress")
         }
     }	
 }
