@@ -11,12 +11,12 @@ func helloHandler(w http.ResponseWriter, r *http.Request) {
 	
 	response := os.Getenv("RESPONSE")
 	if len(response) == 0 {
-		response = "Hello OpenShift for Developers!  YUhuhuhuhuh -> KKK de la vaca"
+		response = "Hello World!"
 	}
 	fmt.Fprintln(w, response)
         currentTime := time.Now()	
-	fmt.Println("YYYY-MM-DD hh:mm:ss : ", currentTime.Format("2006-01-02 15:04:05"))
-	fmt.Println("Servicing an impatient beginner's request.")
+	fmt.Fprintln("YYYY-MM-DD hh:mm:ss : ", currentTime.Format("2006-01-02 15:04:05"))
+	fmt.Fprintln("Servicing an impatient beginner's request.")
 }
 
 func listenAndServe(port string) {
