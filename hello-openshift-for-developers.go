@@ -15,8 +15,8 @@ func helloHandler(w http.ResponseWriter, r *http.Request) {
 		response = "Hello World!"
 	}
 	fmt.Fprintln(w, response)
-	fmt.Fprintln("YYYY-MM-DD hh:mm:ss : ", currentTime.Format("2006-01-02 15:04:05"))
-	fmt.Println("Servicing an impatient beginner's request.")
+	fmt.Fprintln(w, "YYYY-MM-DD hh:mm:ss : ", currentTime.Format("2006-01-02 15:04:05"))
+	fmt.Fprintln(w, "Servicing an impatient beginner's request.")
 }
 
 func listenAndServe(port string) {
